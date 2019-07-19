@@ -1,0 +1,67 @@
+.Content_2{
+    width: 1300px;
+    height: 400px;
+    border: 2px solid #54ff3a;
+    margin-top: 30px;
+    /*margin-left: 10%;*/
+}
+.contentBox-left{
+     width: 400px;
+    height: 400px;
+    /*border: 2px solid #7cd8ff;*/
+    margin-right: 10px;
+    /*padding-right: 30px;*/
+    float: left;
+ }
+.contentBox-left:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+.post-bar{
+    width: 400px;
+
+}
+.post-bar a{
+    display:block;
+    width: 15px;
+    height: 23px;
+    background-image: url("../images/more.jpg");
+    background-repeat: no-repeat;
+    background-position:center ;
+    float: right;
+    overflow: hidden;
+}
+.post-bar:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.content-newsbar {
+
+    width: 300%;
+    height: 300px;
+    line-height: 30px;
+}
+.content-newsbar li{
+    /*border: 2px solid red;*/
+    width: 350px;
+    height: 55px;
+    padding: 10px 0;
+    /*float: left*/
+}
+.rl{
+    width: 50px;
+    height: 52px;
+    float: left;
+    background: url(http://www.ccu.edu.cn/images/rl.jpg) no-repeat;
+    text-align: center;
+    color: #c71e1b;
+    line-height: 24px;
+    padding-top: 3px;
+    padding-right: 8px;
+    font-weight: 600;
+    vertical-align: top;
+    font-size: 12px;
+}

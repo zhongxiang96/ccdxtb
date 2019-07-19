@@ -1,0 +1,81 @@
+/*zzx
+
+*/
+*{
+    padding: 0;
+    margin: 0;
+    color: #424242;
+    text-decoration: none;
+    list-style: none;
+}
+html {
+    -webkit-text-size-adjust:100%;
+    wp-text-size-adjust:100%;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+body{
+    line-height: 1;
+    background-image: url("https://www.pku.edu.cn/images/fw_bg.jpg");
+    background-position-x: center;
+    background-position-y: bottom;
+    background-size: initial;
+    /*background-repeat-x: no-repeat;*/
+    /*background-repeat-y: no-repeat;*/
+    /*background-attachment: initial;*/
+    /*background-origin: initial;*/
+    /*background-clip: initial;*/
+    /*background-color: rgb(255, 255, 255);*/
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+}
+em{
+    color: orangered;
+    font-size: x-large;
+    font-style: normal;
+}
+.em1{
+    display: inline-block;
+    float: right;
+}
+.myblue{
+    background-color: #0068b7;
+}
+.logo{
+    background:url("../images/logo.png");
+    display: block;
+    float: left;
+    width: 335px;
+    /*height: 120px;*/
+    background-size: 335px 113px;
+    /*!*1.缩进  不换行 溢出隐藏*!*/
+    /*text-indent: 335px;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*2.*/
+    height: 0;
+    padding-top: 113px;
+    overflow: hidden;
+}
+.logo:after{
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+/*.context processing 文本溢出...处理*/
+.context-processing{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.news-context{
+    width: 1300px;
+
+    margin-left: 10%;
+    margin-right: 194px;
+    border:  5px solid crimson;
+}
+

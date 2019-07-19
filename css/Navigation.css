@@ -1,0 +1,117 @@
+.wp-wrapper-wp-header {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    height: 120px;
+    position: relative;
+}
+
+.wp-menu-clearfix2 {
+    padding-top: 30px;
+    margin-left: 70%;
+}
+
+.wp-menu-clearfix1 {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 25%;
+}
+
+.wp-menu-clearfix li {
+    float: left;
+}
+
+.wp-menu-clearfix li a {
+    background-color: rgba(0, 104, 183, 0);
+    color: #fff;
+    font-size: revert;
+    margin-right: 5px;
+    padding: 10px 10px;
+}
+
+.menu-link:hover {
+    color: orangered;
+}
+
+.wp-menu-clearfix:after {
+    /*content: "";*/
+    /*display: inline-block;*/
+    /*clear: both;*/
+}
+
+/*flash*/
+.flashbox img {
+    display: none;
+}
+
+.flashbox .img1 {
+    display: block;
+}
+
+/**/
+.substance {
+/*padding: 20px 0;*/
+    /*margin-left: 10%;*/
+    /*margin-right: 5%;*/
+    border: #424242 5px solid;
+
+    width: 1300px;
+    height: 350px;
+
+}
+.substance:after {
+    content: "";
+    display: inline-block;
+    clear: both;
+}
+
+.banner {
+    width: 1300px;
+    height: 40px;
+}
+/*图文内容*/
+.chart-text{
+  width: 66.666%;
+    height: 300px;
+    float: left;
+}
+/**/
+.news-table{
+    width: 33.333%;
+    vertical-align: top;
+}
+/*tp*/
+.news-image img{
+    width: 300px;
+}
+/*biaoti*/
+.span-bar{
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    /*字体样式  normal - 文本正常显示  italic - 文本斜体显示 oblique - 文本倾斜显示  字号 加粗*/
+    /*font-style: italic;*/
+    width:255px;
+    line-height:24px;
+    display:block;
+    font-size:15px;
+    color: #0068b7;
+    font-weight: bold;
+}
+/*xiangxi*/
+.detailed {
+    display:block;
+    width: 255px;
+    line-height:24px;
+    color: #0068b7;
+    font-size: small;
+}
+
+/*简讯*/
+.post-body #form3message span a, .post-body .news-title span a{
+    display: inline-block;
+    width: 255px;
+
+}
+
+
