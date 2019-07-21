@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淘宝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            color: #474747;
+        }
+
+        blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, button, input, select, textarea {
+            background-color: #f4f4f4;
+            color: #f6f6f6;
+            font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+        }
+
+        /*顶部 导航栏*/
+        .navigation-head-box {
+            background-color: #f7f7f7;
+            height: 35px;
+            font-size: small;
+            line-height: 35px;
+        }
+
+        .block_navigation {
+            width: 1200px;
+            background-color: #f7f7f7;
+            height: 30px;
+            margin: 0 auto;
+        }
+
+        .nav-left {
+            float: left;
+
+        }
+
+        .nav-left li {
+            width: 80px;
+            height: 30px;
+            float: left;
+        }
+
+        .nav-left li a em {
+            color: #f40;
+        }
+
+        .nav-right {
+            float: right;
+        }
+
+        .nav-right li {
+            width: 90px;
+            height: 30px;
+            float: left;
+        }
+
+        /*淘宝logo 搜索*/
+        .logo-searching {
+            width: 1200px;
+            height: 70px;
+            margin: 0 auto;
+            padding-top: 24px;
+
+        }
+
+        .logo-searching:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .logo {
+            background-image: url("images/taobaologo.png");
+            background-repeat: no-repeat;
+            /*background-position:;*/
+            margin-top: 20px;
+            width: 143px;
+            height: 59px;
+        }
+
+        .logoBox h1 a {
+            display: none;
+        }
+
+        /*    淘宝搜索框*/
+        .SearchView {
+            margin-left: 100px;
+            float: left;
+            /*border: 1px salmon solid;*/
+
+        }
+
+        /*    搜索类目*/
+        .searchingTitle {
+            width: 609px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        /*搜索标题 */
+        .searchingTitle span {
+            color: #f40;
+            background: #f7f7f7;
+            border: none;
+            padding: 8px;
+            width: 32px;
+            height: 24px;
+        }
+
+        .searchingTitle span:hover {
+            background: #f40;
+            color: #f7f7f7;
+        }
+
+        /*设置整个搜索框的大小，边框 超出内容隐藏 圆角25*/
+        .searchBar {
+            position: relative;
+            width: 610px;
+            height: 30px;
+            border: 2px solid #ff4400;
+            border-radius: 25px;
+            -moz-border-radius: 25px;
+            overflow: hidden;
+        }
+
+        /* */
+        #search {
+            width: 100%;
+            padding-left: 10px;
+            height: 33px;
+            color: #999;
+            border: none;
+        }
+
+        #search:before {
+
+            /*content: '';*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*top: 0;*/
+            /*height: 36px;*/
+            /*border: 2px solid #ff5000;*/
+            /*border-top-left-radius: 20px;*/
+            /*border-bottom-left-radius: 20px;*/
+            /*width: 20px;*/
+            /*border-right: none;*/
+        }
+
+        #sub {
+            position: absolute;
+            width: 74px;
+            top: 0;
+            right: -2px;
+            height: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFF;
+            background-color: #FF4200;
+            cursor: pointer;
+            border: none;
+        }
+
+        .popularSearches {
+            width: 600px;
+            height: 0;
+            padding-top: 10px;
+            /*overflow: hidden;*/
+        }
+
+    </style>
+</head>
+<body>
+<!--顶部导航栏-->
+<div class="navigation-head-box">
+    <div class="block_navigation">
+        <ul class="nav-left">
+            <li>中国大陆</li>
+            <li style="width: 135px;"><a href="#"><em>亲,请登录</em></a>
+                <a href="#"> 免费注册</a></li>
+            <li>手机逛淘宝</li>
+        </ul>
+        <ul class="nav-right">
+            <li>我的淘宝</li>
+            <li>购物车</li>
+            <li>收藏夹</li>
+            <li>商品分类</li>
+            <li>|千牛卖家中心</li>
+            <li>联系客服</li>
+            <li>网站导航</li>
+        </ul>
+    </div>
+</div>
+<!--搜索框 logo-->
+<div style="background-color: #FFFFFF;height: 130px;">
+    <div class="logo-searching">
+        <div class="logoBox" style="float: left;"><a href="#">
+            <div class="logo"></div>
+        </a>
+            <h1><a href="#">淘宝网</a></h1></div>
+
+        <div class="SearchView" title="搜索视图">
+            <div class="searchingTitle" title="类目">搜索标题
+                <span>宝贝</span>
+                <span>天猫</span>
+                <span>店铺</span>
+            </div>
+
+            <div class="searchBar" title="搜索框">
+                <form method="get" name="search" action="s1"><input type="text" id="search" name="search"
+                                                                    value="请输入要搜索内容！"
+                                                                    onfocus="if(this.value=='请输入要搜索内容！'){this.value='';}"
+                                                                    onblur="if (this.value==''){this.value='请输入要搜索内容！'}"/>
+                    <input type="submit" id="sub" name="submit" value="搜索"/>
+                </form>
+            </div>
+            <div class="popularSearches" title="搜索热词"><a href="#">热门分类</a></div>
+
+
+        </div>
+
+    </div>
+</div>
+<!--中间导航栏-->
+<div class="relatedChannelsBox">
+    <style>
+        .relatedChannelsBox {
+            height: 30px;
+            background-color: #f90;
+        }
+
+        .relatedChannels {
+            width: 1200px;
+            margin: 0px auto 0px auto;
+            line-height: 30px;
+            background-color: #f40;
+            color: #f7f7f7;
+        }
+
+        .relatedChannels h2 {
+            float: left;
+            width: 190px;
+            text-align: center;
+            font-size: 16px;
+            background: #ff5000;
+            color: #f7f7f7;
+        }
+
+        .nav-hd {
+            float: left;
+            *display: inline;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .radialGradient ul {
+            position: relative;
+            z-index: 5;
+
+        }
+
+        .nav-hd li {
+            padding: 0 4px;
+            float: left;
+            color: #FFFFFF;
+        }
+
+        .nav-hd li a {
+            float: left;
+            /**display: inline;*/
+            padding: 0 5px;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #ff9000;
+        }
+
+        .pl:before {
+            content: "||";
+            display: block;
+        }
+    </style>
+    <div class="relatedChannels"><h2>主题市场</h2>
+        <ul class="nav-hd">
+            <li>
+                <a href="https://www.tmall.com?spm=a21bo.2017.201859.1.5af911d9yw6lHT"
+                   data-spm-anchor-id="a21bo.2017.201859.1" target="_blank">天猫</a></li>
+            <li><a href="https://ju.taobao.com"
+                   data-spm-anchor-id="a21bo.2017.201859.2" target="_blank">聚划算</a></li>
+            <li><a href="#" target="_blank">天猫超市</a></li>
+        </ul>
+    </div>
+    <ul class="nav-hd">
+        <li class="pl"></li>
+        <li>
+            <a href="https://www.tmall.com?spm=a21bo.2017.201859.1.5af911d9yw6lHT"
+               data-spm-anchor-id="a21bo.2017.201859.1" target="_blank">天猫</a></li>
+        <li><a href="https://ju.taobao.com"
+               data-spm-anchor-id="a21bo.2017.201859.2" target="_blank">聚划算</a></li>
+        <li><a href="#" target="_blank">天猫超市</a></li>
+        <li><a href="#" target="_blank">天猫超市</a></li>
+    </ul>
+    <ul class="nav-hd">
+        <li class="pl"></li>
+        <li>
+            <a href="https://www.tmall.com?spm=a21bo.2017.201859.1.5af911d9yw6lHT"
+               data-spm-anchor-id="a21bo.2017.201859.1" target="_blank">天猫</a></li>
+        <li><a href="https://ju.taobao.com"
+               data-spm-anchor-id="a21bo.2017.201859.2" target="_blank">聚划算</a></li>
+        <li><a href="#" target="_blank">天猫超市</a></li>
+        <li><a href="#" target="_blank">天猫超市</a></li>
+    </ul>
+</div>
+<!--z主ping内容-->
+<div class="mainBox">
+    <!--    s-->
+    <style>
+        .mainBox {
+            width: 1200px;
+            height: 630px;
+            margin: 0 auto;
+            /*border: #FF4200 2px dashed;*/
+            position: relative;
+
+        }
+
+        .main {
+            width: 900px;
+            height: 620px;
+            float: left;
+            /*border: #FF4200 2px dashed;*/
+        }
+
+        .mainNavigation {
+            width: 900px;
+            height: 500px;
+
+
+        }
+
+        .categoryBox {
+            width: 190px;
+            height: 500px;
+            float: left;
+            border: #FF4200 2px solid;
+            overflow: hidden;
+        }
+
+        .categoryBox li {
+            width: 153px;
+            height: 30px;
+            line-height: 30px;
+            font-size: medium;
+            padding: 0px 10px 0px 30px;
+        }
+
+        .categoryBox li:hover {
+            background-color: #FF4200;
+        }
+
+        .categoryBox li a {
+
+        }
+
+    </style>
+    <!--导航 轮播图  今日热卖 -->
+    <div class="main">
+        <!--       main 导航轮播图  -->
+        <div class="mainNavigation">
+            <!--            左侧导航-->
+            <ul class="categoryBox">
+                <li><a href="" target="_blank">男装</a>/<a href="#" target="_blank">女装</a>
+                    /<a href="" target="_blank">内衣</a>
+                    <i style="display: block;float: right;">></i>
+                </li>
+                <li><a href="#" target="_blank">鞋靴</a>/<a href="#" target="_blank">箱包</a>
+                    /<a href="#" target="_blank">配件</a>
+                    <i style="display: block;float: right;">></i>
+                </li>
+            </ul>
+            <!--            主要内容-->
+            <div class="flashBox">
+                <style>
+                    .flashBox {
+                        width: 520px;
+                        height: 99%;
+                        float: left;
+                        margin-left: 10px;
+                        margin-top: 10px;
+
+                        position: relative;
+                    }
+
+                    .cenFlash {
+                    }
+
+                </style>
+                <!--                中间部分-->
+                <div class="cenFlash">
+                    <span class="flash"><img src="images/TB.jpg"></span>
+
+                    <div style="width: 520px; padding: 8px 0; background-color: #f7f7f7">
+                        <h1>天猫广告</h1>
+                        <span><img src="images/TB1Xa.jpg"/></span><span><img src="images/TB1.jpg"/></span>
+                    </div>
+                </div>
+                <!--            main右-->
+            </div>
+            <div class="rightFlash" style="float: right">
+                <span style="display: block"><img src="images/tb-01290x290q90%20(1).jpg"/></span>
+                <span style="display: block"><h3>今日热卖</h3><img src="images/tb-01290x290q90%20(2).jpg"/></span>
+            </div>
+            <!--            main/-->
+        </div>
+        <!--              main 底部-->
+        <div class="mainB">
+            <style>
+                .mainB {
+                    width: 890px;
+                    height: 100px;
+                    padding-top: 30px;
+                    padding-left: 20px;
+                    position: relative;
+                }
+
+                .mainB h3 {
+                    background-image: url('images/tbtt-129-26.png');
+                    background-repeat: no-repeat;
+                    width: 129px;
+                    padding-top: 26px;
+                    line-height: 26px;
+                    display: block;
+                    overflow: hidden;
+                    float: left;
+
+                }
+
+                .mainB h3 em {
+                    display: none;
+                }
+
+                .more {
+                    position: absolute;
+                    right: 50px;
+                    top: 30px;
+                }
+
+                /*    */
+            </style>
+            <!--            下左log-->
+            <a class="more" href="//headline.taobao.com/feed/feedList.htm">更多<i>></i></a>
+            <h3>
+                <em> 淘宝头条</em>
+                <p>
+                    让你的生活更有趣
+                </p>
+
+            </h3>
+            <!--            下右轮播图-->
+            <div class="mod " role="listitem"
+                 style="float: left; margin-left: 50px ; height: 73px; display: block;">
+                <a href="http://headline.taobao.com/feed/feedList.htm">
+                    <img class="a-opacity"
+                         src="//img.alicdn.com/imgextra/i1/3979119722/O1CN012Lgj1he7NJwpGQ1_!!3979119722-0-beehive-scenes.jpg_120x120q90.jpg_.webp"
+                         alt="新闻图片"/>
+                    <div style="float: right; padding-top: 10px;"><h4>微漫酱访谈第三期：超萌舞见弥音音！</h4>
+                        <p style="width: 350px;">哈喽，大家好，我是你们可爱的微漫酱，今天我们请到了一位舞见小姐姐来做客我们的访谈事，她就是弥音音！</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--登录 公告  友情链接-->
+    <div class="loginNoticeLinksBox">
+        <!--        -->
+        <style>
+            .loginNoticeLinksBox {
+                height: 600px;
+                width: 290px;
+                float: left;
+                background-color: #ffffff;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+
+            .loginBox {
+                position: relative;
+            }
+
+            .loginImg {
+                /*position: relative;*/
+                margin: 0 auto;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-image: url('images/loginImage50x50.png');
+                /*background-color: #999999;*/
+                display: block;
+                background-repeat: no-repeat
+
+            }
+            .loginWelcomingRemarks {
+                /*background-color: #FFF;*/
+                padding: 0px;
+                width: 300px;
+                height: 30px;
+                text-align: center;
+                display: table-cell;
+                vertical-align: middle
+            }
+            .loginBox em {
+                color: #FF4200;
+                font-style: normal;
+            }
+            .tjb {
+                background-color: #ffe4bb;
+            }
+
+            .jubao {
+                color: #FF4200;
+                height: 20px;
+                line-height: 20px;
+                background-color: #FFFFFF;
+                text-align: center;
+            }
+        </style>
+        <!--            登录-->
+        <!--        登录 公告 友情链接-->
+        <!--            tupian-->
+        <div class="loginBox">
+            <span class="loginImg"></span>
+            <div class="loginWelcomingRemarks">hi,你好
+                <p style="line-height: 17px;height: 17px;margin: 0 auto; ">
+                    <a href="#" class="tjb"><em>领淘金币抵钱</em></a>
+                    <a href="#" class="tjb"><em>会员俱乐部</em></a>
+                </p>
+            </div>
+            <div class="loginBtn">
+                <style>
+                    .loginBtn {
+                        height: 40px;
+                        width: 100%;
+                        margin: 3px 5px 0 30px;
+                    }
+
+
+                    .loginBtn a {
+                        color: #FFFFFF;
+                        background-color: #FF4200;
+                        display: inline-block;
+                        text-align: center;
+                        width: 60px;
+                        height: 30px;
+                        line-height: 30px;
+                        border-radius: 25px;
+                    }
+                </style>
+                <a href="#" class="" style="width: 90px;" target="_blank" name="登录">登录</a>
+                <a href="#" class="" target="_blank" name="注册">注册</a>
+                <a href="#" class="" target="_blank" name="开店">开店</a>
+            </div>
+            <a href="#"><h3 class="jubao">网上有害信息举报专区
+            </h3></a>
+        </div>
+        <!--            公告-->
+        <div class="noticeBox">
+            <style>
+                .noticeBox {
+                    width: 290px;
+                    height: 100px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #ff333b;
+
+                }
+
+                .notBar {
+                    height: 30px;
+                    /*margin-left: 20px;*/
+                    margin: 0 auto;
+                    /*border: 1px solid #ff333b;*/
+                }
+
+                .notBar li {
+                    /*border: 1px solid #ff333b;*/
+                    width: 40px;
+                    margin-left: 10px;
+                    float: left;
+                    height: 30px;
+                    line-height: 30px;
+                    text-align: center;
+                }
+
+                .notContext p {
+                    margin-top: 10px;
+
+                }
+                .notBar li:hover{
+                    /*color: #ff4400;*/
+                    border-bottom:3px #ff4400 solid ;
+
+                }
+            </style>
+            <ul class=" notBar">
+                <li class="notList1">
+                    <a href="#">公告</a>
+                </li>
+                <li class="notList1">
+                    <a href="#">规则</a>
+                </li>
+                <li class="notList1">
+                    <a href="#">论坛</a>
+                </li>
+                <li class="notList1">
+                    <a href="#">安全</a>
+                </li>
+                <li class="notList1">
+                    <a href="#">公益</a>
+
+            </ul>
+            <div class="notContext">
+                <p><a href="#">三只松鼠今日上市 阿里概念股现象如何解读</a></p>
+                <p><a href="#">三只松鼠今日上市 阿里概念股现象如何解读</a></p>
+            </div>
+        </div>
+
+        <!--              友情链接  -->
+        <div class="linksBox">
+            <style>
+                .chonghuaf {
+                    border: 1px solid #ff333b;
+                }
+
+                .chonghuaf td {
+
+                    align-content: center;
+                    /*line-height: 50px;*/
+                    float: left;
+                    width: 69px;
+                    height: 75px;
+                    border: 1px solid #f4f4f4;
+                    border-left-color: transparent;
+                    border-top-color: transparent;
+                }
+                .tbh-icon {
+                    background-image: url("images/TB1eiXTXlTH8KJjy0FiXXcRsXXa-24-595.png");
+
+                }
+
+                .item-1 .tbh-icon {
+                    background-position: 0 0;
+                }
+
+                .conve-item-icon {
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    margin-top: 11px;
+                    background-repeat: no-repeat;
+                }
+
+                .chonghuaf a {
+                    padding-top: 1px;
+                    text-align: center;
+                    display: block;
+                    position: relative;
+                    z-index: 11;
+                    background: #FFF;
+                    height: 75px;
+                }
+
+                .chonghuaf a p {
+
+                    color: #333;
+                    line-height: 24px;
+
+                }
+
+            </style>
+            <div class="chonghuaf">
+                <table width="290px" border="0">
+                    <tr>
+                        <td class="item-1">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>充话费</p></a>
+                        </td>
+                        <td class="item-2">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>旅行</p></a>
+                        </td>
+                        <td class="item-3">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>车险</p></a>
+                        </td>
+                        <td class="item-4">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>游戏</p></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="item-1">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>充话费</p></a>
+                        </td>
+                        <td class="item-2">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>旅行</p></a>
+                        </td>
+                        <td class="item-3">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>车险</p></a>
+                        </td>
+                        <td class="item-4">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>游戏</p></a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="item-1">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>充话费</p></a>
+                        </td>
+                        <td class="item-2">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>旅行</p></a>
+                        </td>
+                        <td class="item-3">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>车险</p></a>
+                        </td>
+                        <td class="item-4">
+                            <a href="#"><span class="conve-item-icon tbh-icon"></span>
+                                <p>游戏</p></a>
+                        </td>
+
+                    </tr>
+
+                </table>
+            </div>
+            <div class="apps">
+                <h3>阿里app
+                    <a class="" href="https://www.taobao.com/tbhome/page/app-lists?spm=a21bo.2017.201869.1.5af911d9N1FGp7">更多</a></h3>
+                <style>
+
+
+                    apps a:hover {
+                        color: #F40;
+                        text-decoration: none;}
+
+                    .apps h3 {
+                        /*width: 30px;*/
+                        line-height: 20px;
+                        height: 20px;
+                        font-size: 14px;
+                        padding-left: 14px;
+                        z-index: 2;
+                    }.apps h3 a{
+                        float: right;
+                        margin-right: 10px;
+                                         }
+                    .alAppBox {
+                        margin: 0 auto;
+                        padding-left: 20px;
+                        padding-top: 10px;
+                        height: 110px;
+                        background-color: #FFFFFF;
+
+                    }
+
+                    .alApp {
+                        width: 35px;
+                        height: 35px;
+                        float: left;
+                        margin-right: 15px;
+                        margin-bottom: 10px;
+                        overflow: hidden;
+                        /*border: 1px salmon solid;*/
+                        /*line-height: 40px;*/
+                    }
+
+                    .alApp img {
+                        width: 35px;
+                        height: 35px;
+                    }
+                </style>
+                <div class="alAppBox">
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+                    <p class="alApp"><a href="#" title="饿了么"> <img src="images/taobao.png"/> 饿了么</a></p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
